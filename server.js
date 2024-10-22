@@ -24,10 +24,10 @@ app.use(express.static('public')); // Serve frontend files if needed
 
 // User schema and model
 const userSchema = new mongoose.Schema({
-    fullName: String,
-    email: { type: String, unique: true },
-    username: { type: String, unique: true },
-    password: String,
+  fullName: String,
+  email: { type: String, unique: true },
+  username: { type: String, unique: true },
+  password: String,
 });
 const User = mongoose.model('User', userSchema);
 
@@ -47,7 +47,7 @@ const expenseSchema = new mongoose.Schema({
   description: String,
   type: { type: String, enum: ['personal', 'shared'], required: true },
   participants: String,
-  collection: { type: String, enum: ['personal finance', 'shared expenses'], required: true }
+  collection: { type: String, enum: ['personal finance', 'shared expenses'], required: true },
 });
 const Expense = mongoose.model('Expense', expenseSchema);
 
@@ -63,32 +63,32 @@ const TripPlanning = mongoose.model('TripPlanning', tripPlanningSchema);
 
 // Registration route
 app.post('/register', async (req, res) => {
-    const { fullName, email, username, password } = req.body;
-    try {
-        const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = new User({ fullName, email, username, password: hashedPassword });
-        await newUser.save();
-        res.status(201).send('User registered successfully!');
-    } catch (error) {
-        res.status(500).send('Error registering user: ' + error.message);
-    }
+  const { fullName, email, username, password } = req.body;
+  try {
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = new User({ fullName, email, username, password: hashedPassword });
+    await newUser.save();
+    res.status(201).send('User registered successfully!');
+  } catch (error) {
+    res.status(500).send('Error registering user: ' + error.message);
+  }
 });
 
 // Login route
 app.post('/login', async (req, res) => {
-    const { username, password } = req.body;
-    try {
-        const user = await User.findOne({ username });
-        if (!user) return res.status(400).send('Invalid username or password');
+  const { username, password } = req.body;
+  try {
+    const user = await User.findOne({ username });
+    if (!user) return res.status(400).send('Invalid username or password');
 
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) return res.status(400).send('Invalid username or password');
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) return res.status(400).send('Invalid username or password');
 
-        const token = jwt.sign({ id: user._id }, 'your_jwt_secret', { expiresIn: '1h' });
-        res.json({ message: 'Login successful!', token });
-    } catch (error) {
-        res.status(500).send('Error logging in: ' + error.message);
-    }
+    const token = jwt.sign({ id: user._id }, 'your_jwt_secret', { expiresIn: '1h' });
+    res.json({ message: 'Login successful!', token });
+  } catch (error) {
+    res.status(500).send('Error logging in: ' + error.message);
+  }
 });
 
 // Add a new blog
@@ -112,7 +112,6 @@ app.get('/blogs', async (req, res) => {
     res.status(500).send('Error fetching blogs');
   }
 });
-
 
 // Add a new trip
 app.post('/add-trip', async (req, res) => {

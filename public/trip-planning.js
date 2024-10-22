@@ -7,6 +7,7 @@ app.controller('TripController', ['$scope', '$http', function ($scope, $http) {
     $scope.trip = {};
     $scope.trips = [];
     $scope.currentTab = 1;
+    $scope.editIndex = undefined; // Initialize editIndex
 
     // Load all trips from the backend on page load
     $scope.loadTrips = function () {
@@ -20,6 +21,18 @@ app.controller('TripController', ['$scope', '$http', function ($scope, $http) {
         );
     };
 
+    // Load planned trips from the backend
+    $scope.loadPlannedTrips = function () {
+        $http.get('/trips/planned').then(
+            function (response) {
+                $scope.trips = response.data; // Update trips with planned trips
+            },
+            function (error) {
+                console.error('Error fetching planned trips:', error);
+            }
+        );
+    };
+
     // Call loadTrips when the controller initializes
     $scope.loadTrips();
 
@@ -28,8 +41,11 @@ app.controller('TripController', ['$scope', '$http', function ($scope, $http) {
         $scope.currentTab = tabIndex;
     };
 
+    // Navigate to the previous tab
     $scope.previousTab = function () {
-        if ($scope.currentTab > 1) $scope.currentTab--;
+        if ($scope.currentTab > 1) {
+            $scope.currentTab--;
+        }
     };
 
     // Submit new trip to the backend
@@ -38,8 +54,8 @@ app.controller('TripController', ['$scope', '$http', function ($scope, $http) {
             function () {
                 alert('Trip successfully added!');
                 $scope.loadTrips(); // Refresh trips list
-                $scope.trip = {};
-                $scope.currentTab = 1;
+                $scope.trip = {}; // Reset trip form
+                $scope.currentTab = 1; // Reset to the first tab
             },
             function (error) {
                 console.error('Error adding trip:', error);
@@ -51,8 +67,8 @@ app.controller('TripController', ['$scope', '$http', function ($scope, $http) {
     // Edit an existing trip
     $scope.editTrip = function (index) {
         $scope.trip = angular.copy($scope.trips[index]);
-        $scope.currentTab = 1;
-        $scope.editIndex = $scope.trips[index]._id; // Use the trip's ID
+        $scope.currentTab = 1; // Switch to the first tab
+        $scope.editIndex = $scope.trips[index]._id; // Store the trip's ID for updating
     };
 
     // Update trip in the backend
@@ -60,10 +76,10 @@ app.controller('TripController', ['$scope', '$http', function ($scope, $http) {
         $http.put('/update-trip/' + $scope.editIndex, $scope.trip).then(
             function () {
                 alert('Trip successfully updated!');
-                $scope.loadTrips();
-                $scope.trip = {};
-                $scope.currentTab = 1;
-                $scope.editIndex = undefined;
+                $scope.loadTrips(); // Refresh trips list
+                $scope.trip = {}; // Reset trip form
+                $scope.currentTab = 1; // Reset to the first tab
+                $scope.editIndex = undefined; // Clear edit index
             },
             function (error) {
                 console.error('Error updating trip:', error);
@@ -79,7 +95,7 @@ app.controller('TripController', ['$scope', '$http', function ($scope, $http) {
             $http.delete('/delete-trip/' + tripId).then(
                 function () {
                     alert('Trip successfully deleted!');
-                    $scope.loadTrips();
+                    $scope.loadTrips(); // Refresh trips list
                 },
                 function (error) {
                     console.error('Error deleting trip:', error);
