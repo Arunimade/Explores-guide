@@ -1,0 +1,34 @@
+[
+    {
+        "tripName": "Summer Vacation",
+        "destination": "Paris",
+        "startDate": "2024-06-15",
+        "endDate": "2024-06-25",
+        "budget": 3000,
+        "transportation": "plane",
+        "accommodation": "Hotel Le Meurice",
+        "meal": "vegetarian",
+        "insurance": "Yes",
+        "packing": "Clothes, Camera, Sunscreen",
+        "communication": "Local SIM card",
+        "localResearch": "Visited Eiffel Tower, Louvre, Montmartre",
+        "financialPreparation": "Euros exchanged in advance",
+        "notes": "Look into booking a Seine River cruise."
+    },
+    {
+        "tripName": "Business Trip",
+        "destination": "New York",
+        "startDate": "2024-09-01",
+        "endDate": "2024-09-05",
+        "budget": 1500,
+        "transportation": "plane",
+        "accommodation": "Marriott Downtown",
+        "meal": "non-vegetarian",
+        "insurance": "No",
+        "packing": "Laptop, Business Suits",
+        "communication": "Roaming with current provider",
+        "localResearch": "Meeting with clients near Wall Street",
+        "financialPreparation": "Company credit card for expenses",
+        "notes": "Prepare slides for Monday's presentation."
+    }
+]

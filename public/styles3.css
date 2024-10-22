@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5; /* Light grey background */
+  color: #333; /* Dark grey text */
+  line-height: 1.6;
+}
+
+header {
+  background-color: #ffffff; /* White background */
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+header h1 {
+  color: #333; /* Dark grey */
+  font-size: 2em;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #FFFFFF;
+  background-color: #9b05f9; /* Darker brown for nav buttons */
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #0004ff; /* Lighter shade on hover */
+}
+
+main {
+  padding: 20px;
+}
+
+.hero {
+  background-color: #ffffff; /* Light grey */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.hero h1 {
+  color: #333; /* Dark grey */
+}
+
+.highlight {
+  color: #0800ff; /* Highlight color */
+}
+
+.tabs {
+  margin: 20px 0;
+}
+
+.tab-button {
+  background-color: #007BFF; /* Blue button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.tab-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+/* Form Styling */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #e7f5ff; /* Light blue background */
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  border-left: 5px solid #007BFF; /* Broad blue border on the left */
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #0056b3; /* Darker blue for labels */
+  font-weight: 600;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 2px solid transparent; /* Make border transparent for color transition */
+  background-color: #ffffff; /* White background for inputs */
+  color: #333; /* Dark text for inputs */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #007BFF; /* Focus border color */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Focus shadow effect */
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.previous-button,
+.next-button {
+  background-color: #007BFF; /* Button color */
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.previous-button:hover,
+.next-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: translateY(-2px);
+}
+
+/* Trip List Styling */
+#trip-list {
+  margin-top: 40px;
+}
+
+#trip-list h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #0056b3; /* Darker blue for section heading */
+}
+
+#trip-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+#trip-list li {
+  background-color: #fffdfd; /* White background for trip list items */
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border: 2px solid #007BFF; /* Colorful border for trip list items */
+}
+
+#trip-list li:hover {
+  transform: translateY(-3px);
+}
+
+footer {
+  background-color: #e7f5ff; /* Light blue background for footer */
+  text-align: center;
+  padding: 5px; /* Reduced padding for a thinner footer */
+  width: 100%;
+  color: #333; /* Dark text for footer */
+  border-top: 2px solid #007BFF; /* Border color matches theme */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Reduced shadow for a lighter look */
+  position: fixed; /* Keep footer at the bottom */
+  bottom: 0; /* Position it at the bottom of the viewport */
+  left: 0; /* Align to the left */
+  z-index: 1000; /* Ensure it stays above other content */
+  font-size: 14px; /* Optional: adjust font size for better fit */
+}
+
+
+.emoji {
+  position: absolute; /* Keep it absolute for positioning */
+  top: 50%; /* Adjust as needed */
+  left: 10px; /* Adjust as needed */
+  font-size: 300px; /* Adjust size as needed */
+  transform: rotate(15deg); /* Slant the emoji to the right */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.emoji:hover {
+  transform: rotate(15deg) scale(1.1); /* Slightly enlarge on hover while maintaining slant */
+}
+.aemoji {
+  position: absolute; /* Keep it absolute for positioning */
+  top: 50%; /* Adjust as needed */
+  left: 80%; /* Adjust as needed */
+  font-size: 300px; /* Adjust size as needed */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+.femoji {
+  position: absolute; /* Keep it absolute for positioning */
+  top: 95%; /* Adjust as needed */
+  left: 70%; /* Adjust as needed */
+  font-size: 300px; /* Adjust size as needed */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+.qmoji {
+  position: absolute; /* Keep it absolute for positioning */
+  top: 95%; /* Adjust as needed */
+  left: 10px; /* Adjust as needed */
+  font-size: 300px; /* Adjust size as needed */
+  transform: rotate(15deg); /* Slant the emoji to the right */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.qmoji:hover {
+  transform: rotate(15deg) scale(1.1); /* Slightly enlarge on hover while maintaining slant */
+}
+/* Button Styles */
+button {
+  font-family: 'Arial', sans-serif; /* Font style */
+  font-size: 16px; /* Font size */
+  padding: 10px 20px; /* Padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Transition for hover effects */
+  margin: 5px; /* Space between buttons */
+}
+
+/* Submit Button */
+button[type="submit"] {
+  background-color: #ff0075; /* Background color */
+  color: #ffffff; /* Text color */
+}
+
+/* Back Button */
+button[type="button"] {
+  background-color: #cc00ff; /* Background color */
+  color: #ffffff; /* Text color */
+}
+
+/* Hover Effects */
+button:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+button[type="submit"]:hover {
+  background-color: #ffcc00; /* Change background color on hover */
+}
+
+button[type="button"]:hover {
+  background-color: #6a46fb; /* Change background color on hover */
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tripApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🗺️ Trip Planning - Explorer's Weather Guide</title>
+    <link rel="stylesheet" href="styles3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="trip-planning.js"></script>
+</head>
+<body ng-controller="TripController">
+    <header>
+        <h1>🗺️ Trip Planning</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"> 🏠Home</a></li>
+                <li><a href="weather.html">🌦️ Current Weather</a></li>
+                <li><a href="forecast.html">📅 5-Day Forecast</a></li>
+                <li><a href="expense-tracker.html">💵 Expense Tracker</a></li>
+                <li><a href="trip-planning.html">🗺️ Trip Planning</a></li>
+                <li><a href="blogging.html">✍️ Blogging</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1><span class="highlight">📋 PLAN YOUR</span> <br> <span class="highlight">✈️ TRIP</span> EFFICIENTLY</h1>
+            <p>Efficiently track and control your travel plans with our intuitive trip management tools.</p>
+            <div class="tabs">
+                <button class="tab-button" ng-click="setActiveTab(1)">📄 Basic Information</button>
+                <button class="tab-button" ng-click="setActiveTab(2)">🚗 Travel Details</button>
+                <button class="tab-button" ng-click="setActiveTab(3)">📦 Additional Information</button>
+                <button class="tab-button" ng-click="setActiveTab(4)">✔️ Review</button>
+            </div>
+        </section>
+        <span class="emoji">🗺️</span> 
+        <span class="qmoji">📅 </span> 
+        <span class="aemoji">🚢</span> 
+        <span class="femoji">🏕️</span> 
+        <br><br>
+        <section id="trip-planning">
+            <form id="trip-form" ng-submit="submitForm()">
+                <!-- Basic Information -->
+                <div ng-show="currentTab === 1">
+                    <h3>📄 Basic Information</h3>
+                    <label for="trip_name">✏️ Trip Name:</label>
+                    <input type="text" id="trip_name" ng-model="trip.tripName" required><br><br>
+
+                    <label for="destination">🌍 Destination:</label>
+                    <input type="text" id="destination" ng-model="trip.destination" required><br><br>
+
+                    <label for="start_date">📅 Start Date:</label>
+                    <input type="date" id="start_date" ng-model="trip.startDate" required><br><br>
+
+                    <label for="end_date">📅 End Date:</label>
+                    <input type="date" id="end_date" ng-model="trip.endDate" required><br><br>
+
+                    <label for="budget">💰 Budget:</label>
+                    <input type="number" id="budget" ng-model="trip.budget" required><br><br>
+                </div>
+
+                <!-- Travel Details -->
+                <div ng-show="currentTab === 2">
+                    <h3>🚗 Travel Details</h3>
+                    <label for="transportation">🚌 Transportation:</label>
+                    <select id="transportation" ng-model="trip.transportation" required>
+                        <option value="car">🚗 Car</option>
+                        <option value="plane">✈️ Plane</option>
+                        <option value="train">🚂 Train</option>
+                        <option value="bus">🚌 Bus</option>
+                    </select><br><br>
+
+                    <label for="accommodation">🏨 Accommodation:</label>
+                    <input type="text" id="accommodation" ng-model="trip.accommodation" required><br><br>
+
+                    <label>🍽️ Meal Preferences:</label>
+                    <select id="meal" ng-model="trip.meal">
+                        <option value="vegetarian">🥗 Vegetarian</option>
+                        <option value="non-vegetarian">🍗 Non-Vegetarian</option>
+                    </select><br><br>
+
+                    <label for="insurance">💼 Travel Insurance:</label>
+                    <input type="checkbox" id="insurance" ng-model="trip.insurance">
+                    <label for="insurance">✅ Opt for Travel Insurance</label><br><br>
+                </div>
+
+                <!-- Additional Information -->
+                <div ng-show="currentTab === 3">
+                    <h3>📦 Additional Information</h3>
+                    <label for="packing">🧳 Packing List:</label>
+                    <textarea id="packing" ng-model="trip.packing" rows="2" required></textarea><br><br>
+
+                    <label for="communication">📞 Communication:</label>
+                    <input type="text" id="communication" ng-model="trip.communication" required><br><br>
+
+                    <label for="local_research">🔍 Local Research:</label>
+                    <textarea id="local_research" ng-model="trip.localResearch" rows="2" required></textarea><br><br>
+
+                    <label for="financial_preparation">💵 Financial Preparation:</label>
+                    <textarea id="financial_preparation" ng-model="trip.financialPreparation" rows="2" required></textarea><br><br>
+
+                    <label for="notes">📝 Additional Notes:</label>
+                    <textarea id="notes" ng-model="trip.notes" rows="4"></textarea><br><br>
+                </div>
+
+                <!-- Review -->
+                <div ng-show="currentTab === 4">
+                    <h3>✔️ Review Your Trip</h3>
+                    <p><strong>✏️ Trip Name:</strong> {{ trip.tripName }}</p>
+                    <p><strong>🌍 Destination:</strong> {{ trip.destination }}</p>
+                    <p><strong>📅 Start Date:</strong> {{ trip.startDate | date:'shortDate' }}</p>
+                    <p><strong>📅 End Date:</strong> {{ trip.endDate | date:'shortDate' }}</p>
+                    <p><strong>💰 Budget:</strong> {{ trip.budget | currency:'Rs' }}</p>
+                    <p><strong>🚌 Transportation:</strong> {{ trip.transportation }}</p>
+                    <p><strong>🏨 Accommodation:</strong> {{ trip.accommodation }}</p>
+                    <p><strong>🍽️ Meal Preferences:</strong> {{ trip.meal }}</p>
+                    <p><strong>💼 Travel Insurance:</strong> {{ trip.insurance ? 'Yes' : 'No' }}</p>
+                    <p><strong>🧳 Packing List:</strong> {{ trip.packing }}</p>
+                    <p><strong>📞 Communication:</strong> {{ trip.communication }}</p>
+                    <p><strong>🔍 Local Research:</strong> {{ trip.localResearch }}</p>
+                    <p><strong>💵 Financial Preparation:</strong> {{ trip.financialPreparation }}</p>
+                    <p><strong>📝 Additional Notes:</strong> {{ trip.notes }}</p>
+                    <br><br>
+                    <button type="button" ng-click="submitForm()">✔️ Submit Trip</button>
+                    <button type="button" ng-click="previousTab()">⬅️ Back</button>
+                </div>
+            </form>
+
+            <div id="trip-list">
+                <h3>📅 Planned Trips</h3>
+                <ul>
+                    <li ng-repeat="trip in trips" ng-click="viewTripDetails(trip._id)" style="cursor: pointer;">
+                        <strong>{{ trip.tripName }}</strong> - {{ trip.destination }}
+                        ({{ trip.startDate | date: 'shortDate' }} to {{ trip.endDate | date: 'shortDate' }})
+                        <button ng-click="deleteTrip($index); $event.stopPropagation();">🗑️ Delete</button>
+                    </li>
+                </ul>
+            </div>
+            
+            
+            <footer>
+                <p>&copy; 2024 Explorer's Weather Guide. All rights reserved.</p>
+            </footer>
+</body>
+</html>

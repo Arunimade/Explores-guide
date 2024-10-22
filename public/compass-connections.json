@@ -1,0 +1,98 @@
+{
+  "type": "Compass Connections",
+  "version": {
+    "$numberInt": "1"
+  },
+  "connections": [
+    {
+      "id": "220e6245-cf88-4e29-9f87-3fb4d9eb7a83",
+      "lastUsed": {
+        "$date": {
+          "$numberLong": "1728110457084"
+        }
+      },
+      "favorite": {
+        "name": "Trip Planning"
+      },
+      "savedConnectionType": "recent",
+      "connectionOptions": {
+        "connectionString": "mongodb+srv://TripPlanning:8december2003@blog.cewo1.mongodb.net/",
+        "oidc": {
+          "serializedState": "eyJvaWRjUGx1Z2luU3RhdGVWZXJzaW9uIjowLCJzdGF0ZSI6W119"
+        }
+      }
+    },
+    {
+      "id": "2bdef33c-7f71-4fee-8da8-a45eb035f919",
+      "lastUsed": {
+        "$date": {
+          "$numberLong": "1728110187351"
+        }
+      },
+      "favorite": {
+        "name": "Profile"
+      },
+      "savedConnectionType": "recent",
+      "connectionOptions": {
+        "connectionString": "mongodb+srv://Profile:8december2003@blog.cewo1.mongodb.net/",
+        "oidc": {
+          "serializedState": "eyJvaWRjUGx1Z2luU3RhdGVWZXJzaW9uIjowLCJzdGF0ZSI6W119"
+        }
+      }
+    },
+    {
+      "id": "8001d637-21bf-4e0e-85ac-41196d2f6bf1",
+      "lastUsed": {
+        "$date": {
+          "$numberLong": "1728110415848"
+        }
+      },
+      "favorite": {
+        "name": "Blog"
+      },
+      "savedConnectionType": "recent",
+      "connectionOptions": {
+        "connectionString": "mongodb+srv://Blog:8december2003@blog.cewo1.mongodb.net/",
+        "oidc": {
+          "serializedState": "eyJvaWRjUGx1Z2luU3RhdGVWZXJzaW9uIjowLCJzdGF0ZSI6W119"
+        }
+      }
+    },
+    {
+      "id": "b47fe931-274a-44a6-9ec3-f9622f9e2205",
+      "lastUsed": {
+        "$date": {
+          "$numberLong": "1728109900667"
+        }
+      },
+      "favorite": {
+        "name": "PersonalFinance"
+      },
+      "savedConnectionType": "recent",
+      "connectionOptions": {
+        "connectionString": "mongodb+srv://PersonalFinance:8december2003@blog.cewo1.mongodb.net/",
+        "oidc": {
+          "serializedState": "eyJvaWRjUGx1Z2luU3RhdGVWZXJzaW9uIjowLCJzdGF0ZSI6W119"
+        }
+      }
+    },
+    {
+      "id": "e9464397-5ee4-4b34-8e3f-44d3796db9b9",
+      "lastUsed": {
+        "$date": {
+          "$numberLong": "1728110277500"
+        }
+      },
+      "favorite": {
+        "name": "SharedExpense"
+      },
+      "savedConnectionType": "recent",
+      "connectionOptions": {
+        "connectionString": "mongodb+srv://SharedExpense:8december2003@blog.cewo1.mongodb.net/",
+        "oidc": {
+          "serializedState": "eyJvaWRjUGx1Z2luU3RhdGVWZXJzaW9uIjowLCJzdGF0ZSI6W119"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="loginApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style5.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="LoginController">
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" ng-model="user.username" placeholder="Username" required>
+        <input type="password" ng-model="user.password" placeholder="Password" required>
+        <button ng-click="login()">Login</button>
+        <div class="register">
+            Don't have an account? <a href="reg.html">Register</a>
+        </div>
+    </div>
+    <script>
+        var app = angular.module('loginApp', []);
+
+        app.controller('LoginController', ['$scope', '$http', '$window', function($scope, $http, $window) {
+            $scope.user = {};
+
+            $scope.login = function() {
+                $http.post('http://localhost:5000/login', $scope.user)
+                .then(function(response) {
+                    alert('Login successful!');
+                    $window.location.href = 'index.html'; // Redirect after login
+                })
+                .catch(function(error) {
+                    alert('Invalid username or password');
+                });
+            };
+        }]);
+    </script>
+</body>
+</html>

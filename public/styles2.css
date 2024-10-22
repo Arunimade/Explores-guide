@@ -1,0 +1,248 @@
+/* expense-tracker-styles.css */
+
+/* General Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Light background for a clean look */
+    color: #333; /* Dark grey text for easy readability */
+}
+
+header {
+    background-color: #003366; /* Dark blue for header background */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em;
+    color: #ffffff;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #004080; /* Lighter blue on hover */
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.hero {
+    background-color: #e0f0f9; /* Soft, calm background */
+    padding: 50px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #003366;
+    font-weight: bold;
+}
+
+.tabs {
+    margin-top: 20px;
+}
+
+.tab-button {
+    background-color: #004080; /* Dark blue buttons */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.tab-button:hover {
+    background-color: #0059b3; /* Slightly lighter on hover */
+}
+
+.tab-button.active {
+    background-color: #00264d; /* Even darker blue for active state */
+}
+
+.tab-content {
+    display: none;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.tab-content h3 {
+    color: #003366;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto; /* Center align form */
+}
+
+.form-container input,
+.form-container select,
+.form-container button,
+.form-container textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-container button {
+    background-color: #004080;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #0059b3;
+}
+
+/* Personal and Shared Section Styling */
+#personal-budget-section, #shared-budget-section,
+#personal-summary-section, #shared-summary-section {
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#personal-budget-section h3, #shared-budget-section h3,
+#personal-summary-section h3, #shared-summary-section h3 {
+    color: #003366;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #003366; /* Dark blue background */
+    color: #ffffff; /* White text for contrast */
+    padding: 5px; /* Padding for spacing */
+    text-align: center; /* Center text alignment */
+    position: fixed; /* Fix position to always show at bottom */
+    width: 100%; /* Full width */
+    bottom: 0; /* Stick to the bottom of the viewport */
+    left: 0; /* Align to the left */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Add margin to the main content to ensure it doesn't overlap with the footer */
+main {
+    margin-bottom: 60px; /* Adjust according to footer height */
+}
+
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .form-container {
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
+.emoji {
+    position: absolute;
+    top: 75vh; /* Adjust based on viewport height */
+    left: 5vw; /* Adjust based on viewport width */
+    font-size: clamp(100px, 15vw, 200px); /* Responsive font size */
+    transform: rotate(15deg); /* Slant the emoji */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.emoji:hover {
+    transform: rotate(15deg) scale(1.1); /* Slight enlargement on hover */
+}
+
+.aemoji {
+    position: absolute;
+    top: 75vh; /* Align with the other emoji */
+    left: 80vw; /* Adjust based on width */
+    font-size: clamp(100px, 15vw, 200px); /* Responsive size */
+    transition: transform 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Optional: Adjust positioning for smaller screens */
+@media (max-width: 600px) {
+    .emoji, .aemoji {
+        top: 70vh; /* Adjust for smaller screens */
+        font-size: clamp(80px, 10vw, 150px); /* Smaller font size */
+    }
+}
+
+button {
+    background-color: #ff0075;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #ff4d94;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button#download-pdf {
+    background-color: #ffcc00;
+    color: #1d1d1d;
+}
+
+button#download-pdf:hover {
+    background-color: #ffd84d;
+}

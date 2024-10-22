@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Location Weather - Explorer's Weather Guide</title>
+    <link rel="stylesheet" href="styles1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>🌎 Current Location Weather</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"> 🏠Home</a></li>
+                <li><a href="weather.html">🌦️ Current Weather</a></li>
+                <li><a href="forecast.html">📅 5-Day Forecast</a></li>
+                <li><a href="expense-tracker.html">💰 Expense Tracker</a></li>
+                <li><a href="trip-planning.html">🗺️ Trip Planning</a></li>
+                <li><a href="blogging.html">✍️ Blogging</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="current-weather">
+            <h2>🌤️ Current Weather</h2>
+            <div class="container">
+                <input type="text" id="locationInput" placeholder="Enter a city">
+                <button id="searchButton">🔍 Search</button>
+            </div>
+            <span class="emoji">🌤️</span>
+            <span class="aemoji">❄️</span>
+            <div id="current-weather-display">
+                <p>📍 Location: <span id="location"></span></p>
+                <p>🌡️ Temperature: <span id="temperature"></span> </p>
+                <p>🌧️ Humidity: <span id="humidity"></span>%</p>
+                <p>🌬️ Wind Speed: <span id="wind-speed"></span> m/s</p>
+                <p>🌥️ Conditions: <span id="conditions"></span></p>
+                <p>🔍 Pressure: <span id="pressure"></span> hPa</p>
+                <p>☁️ Cloud Cover: <span id="cloud-cover"></span>%</p>
+                <p>👀 Visibility: <span id="visibility"></span> km</p>
+                <p>💧 Dew Point: <span id="dew-point"></span> °C</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Explorer's Weather Guide. All rights reserved.</p>
+    </footer>
+    <script src="current-location-scripts.js"></script>
+</body>
+</html>

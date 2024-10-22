@@ -1,0 +1,173 @@
+/* stylesw.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #89f7fe, #66a6ff);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: #004e92;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+main {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#current-weather {
+    background-color: #282828;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: left;
+}
+
+#current-weather-display {
+    padding: 20px;
+    background-color: #ffffff;
+    color: #282828;
+    border: 6px solid transparent;
+    border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><text y="15" font-size="14">☁️☀️</text></svg>') 40 stretch;
+    border-radius: 15px;
+}
+
+input, button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #006aff;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004bb5;
+}
+
+#current-weather {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#current-weather h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #004e92;
+}
+
+.container {
+    margin-bottom: 20px;
+}
+
+#locationInput {
+    padding: 10px;
+    font-size: 1rem;
+    width: calc(100% - 100px);
+    border: 2px solid #0072ff;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #0072ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+#searchButton:hover {
+    background: #004e92;
+}
+
+#current-weather-display {
+    text-align: left;
+}
+
+#current-weather-display p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+footer {
+    background: #004e92;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Increased gap for better spacing */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFD700;
+    font-weight: 700;
+    font-size: 1.1em; /* Slightly larger text for emphasis */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Added transition for scale */
+}
+
+nav ul li a:hover {
+    color: #87CEEB;
+    transform: scale(1.1); /* Scale up on hover */
+}
+.emoji {
+    position: absolute; /* Keep it absolute for positioning */
+    top: 30%; /* Adjust as needed */
+    left: 1%; /* Adjust as needed */
+    font-size: 300px; /* Adjust size as needed */
+    transform: rotate(15deg); /* Slant the emoji to the right */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.emoji:hover {
+    transform: rotate(15deg) scale(1.1); /* Slightly enlarge on hover while maintaining slant */
+}
+.aemoji {
+    position: absolute; /* Keep it absolute for positioning */
+    top: 30%; /* Adjust as needed */
+    left: 75%; /* Adjust as needed */
+    font-size: 300px; /* Adjust size as needed */
+    transform: rotate(-75deg); /* Slant the emoji to the right */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.aemoji:hover {
+    transform: rotate(-75deg) scale(1.1); /* Slightly enlarge on hover while maintaining slant */
+}

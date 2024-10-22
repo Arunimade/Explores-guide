@@ -1,0 +1,50 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✍️ Blogging - Explorer's Weather Guide</title>
+    <link rel="stylesheet" href="styles4.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>✍️ Blogging</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"> 🏠Home</a></li>
+                <li><a href="weather.html">🌦️ Current Weather</a></li>
+                <li><a href="forecast.html">📅 5-Day Forecast</a></li>
+                <li><a href="expense-tracker.html">💵 Expense Tracker</a></li>
+                <li><a href="trip-planning.html">✈️ Trip Planning</a></li>
+                <li><a href="blogging.html">✍️ Blogging</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="blogging">
+            <h2 >📝 Share Your Travel Experiences</h2>
+            <span class="emoji">🧳</span> 
+            <span class="aemoji">✈️</span> 
+            <form id="blog-form" class="form-half-width">
+                <label for="blog-title">📄 Blog Title:</label>
+                <input type="text" id="blog-title" required>
+                <label for="blog-content">🖋️ Content:</label>
+                <textarea id="blog-content" rows="10" required></textarea>
+                <button type="submit">📢 Post Blog</button>
+            </form>
+            <div id="blog-list">
+                <h3>📰 Recent Blogs</h3>
+                <ul id="blogs"></ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Explorer's Weather Guide. All rights reserved.</p>
+    </footer>
+
+    <script src="blogging.js"></script>
+</body>
+</html>

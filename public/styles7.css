@@ -1,0 +1,143 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, rgba(137, 247, 254, 0.7), rgba(102, 166, 255, 0.7)),
+                url('https://www.bing.com/images/create/A-breathtaking-view-of-the-Northern-Lights-shimmering-over-a-snowy-Icelandic-landscape/1-1A6058FA9CDE4612B6E6A09BD0B43928?id=Pp2Wmx2b%2BlzIlvltti9UHA%3D%3D&view=detailv2&idpp=genimg&FORM=GLPIDP&idpview=singleimage');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+header {
+    background: #004e92;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+main {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #ccc;
+}
+
+input {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#forecast {
+    margin-top: 20px;
+}
+
+.day-forecast {
+    background-color: #e0f7fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.day-forecast p {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Increased gap for better spacing */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFD700;
+    font-weight: 700;
+    font-size: 1.1em; /* Slightly larger text for emphasis */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Added transition for scale */
+}
+
+nav ul li a:hover {
+    color: #87CEEB;
+    transform: scale(1.1); /* Scale up on hover */
+}
+/* Emoji styles */
+.emoji {
+    position: absolute; /* Keep it absolute for positioning */
+    top: 30%; /* Adjust as needed */
+    left: 1%; /* Adjust as needed */
+    font-size: 300px; /* Adjust size as needed */
+    transform: rotate(15deg); /* Slant the emoji to the right */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for hover effect and opacity */
+    z-index: 0; /* Send emoji behind the container */
+    opacity: 0.4; /* Fully visible by default */
+}
+
+.emoji:hover {
+    transform: rotate(15deg) scale(1.1); /* Slightly enlarge on hover while maintaining slant */
+}
+
+.aemoji {
+    position: absolute; /* Keep it absolute for positioning */
+    top: 30%; /* Adjust as needed */
+    left: 75%; /* Adjust as needed */
+    font-size: 300px; /* Adjust size as needed */
+    transform: rotate(-75deg); /* Slant the emoji to the right */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for hover effect and opacity */
+    z-index: 0; /* Send emoji behind the container */
+    opacity: 0.4; /* Fully visible by default */
+}
+
+.aemoji:hover {
+    transform: rotate(-75deg) scale(1.1); /* Slightly enlarge on hover while maintaining slant */
+}
+
+/* New class to hide emojis with fading effect */
+.hidden {
+    opacity: 0; /* Fully transparent */
+    pointer-events: none; /* Prevent interaction */
+}

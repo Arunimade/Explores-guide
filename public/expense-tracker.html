@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker - Explorer's Finance Guide</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>💰 Expense Tracker</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="weather.html">🌦️ Current Weather</a></li>
+                <li><a href="forecast.html">📅 5-Day Forecast</a></li>
+                <li><a href="expense-tracker.html">💵 Expense Tracker</a></li>
+                <li><a href="trip-planning.html">🗺️ Trip Planning</a></li>
+                <li><a href="blogging.html">✍️ Blogging</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1><span class="highlight">MANAGE YOUR</span> <br> <span class="highlight">💸 EXPENSES</span> EFFICIENTLY</h1>
+            <p>Efficiently track and control your spending with our intuitive expense management tools.</p>
+
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('personal-expenses')">💼 Personal Expenses</button>
+                <button class="tab-button" onclick="openTab('shared-expenses')">👫 Shared Expenses</button>
+            </div>
+        </section>
+
+        <section>
+            <div id="personal-expenses" class="tab-content">
+                <h3>💼 Personal Expenses</h3>
+                <span class="emoji">🪙</span> 
+                <span class="aemoji">🏦 </span> 
+                <form id="personal-expenses-form" class="form-container">
+                    <input type="date" id="personal-entry-date" required>
+                    <select id="personal-entry-category">
+                        <option value="Accommodation">🏨 Accommodation</option>
+                        <option value="Food">🍔 Food</option>
+                        <option value="Transportation">🚗 Transportation</option>
+                        <option value="Activities">🏞️ Activities</option>
+                        <option value="Shopping">🛍️ Shopping</option>
+                    </select>
+                    <input type="number" id="personal-entry-amount" placeholder="💸 Amount (Rs)" required>
+                    <input type="text" id="personal-entry-description" placeholder="📝 Description">
+                    <input type="text" id="personal-entry-location" placeholder="📍 Location">
+                    <label for="personal-entry-bill">Upload Bill (Optional):</label>
+                    <input type="file" id="personal-entry-bill" accept="image/*">
+                    <button type="submit">➕ Add Entry</button>
+                </form>
+                <ul id="personal-expense-list"></ul>
+                <p><strong>Total Personal Expenses:</strong> ₹<span id="personal-total">0.00</span></p>
+            </div>
+
+            <div id="shared-expenses" class="tab-content" style="display:none;">
+                <h3>👫 Shared Expenses with Friends</h3>
+                <span class="emoji">💳 </span> 
+                <span class="aemoji">🧾</span> 
+                <form id="shared-expenses-form" class="form-container">
+                    <input type="date" id="shared-entry-date" required>
+                    <select id="shared-entry-category">
+                        <option value="Accommodation">🏨 Accommodation</option>
+                        <option value="Food">🍔 Food</option>
+                        <option value="Transportation">🚗 Transportation</option>
+                        <option value="Activities">🏞️ Activities</option>
+                        <option value="Shopping">🛍️ Shopping</option>
+                    </select>
+                    <input type="number" id="shared-entry-amount" placeholder="💸 Total Amount (Rs)" required>
+                    <input type="text" id="shared-entry-participants" placeholder="👥 Participants (comma-separated)" required>
+                    <label for="shared-entry-bill">Upload Bill (Optional):</label>
+                    <input type="file" id="shared-entry-bill" accept="image/*">
+                    <button type="submit">➕ Add Entry</button>
+                </form>
+                <ul id="shared-expense-list"></ul>
+                <p><strong>Total Shared Expenses:</strong> ₹<span id="shared-total">0.00</span></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>📊 Generate Report</h2>
+            <div style="text-align: center; margin-top: 10px;">
+                <button id="generate-report" style="margin-right: 10px;">Generate Report</button>
+                <button id="download-pdf">Download PDF</button>
+            </div>    
+            <canvas id="expense-chart" width="40" height="40" style="align-content: center;"></canvas>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Explorer's Finance Guide. All rights reserved.</p>
+    </footer>
+
+    <script src="expense-tracker-scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Light gray for a subtle background */
+    color: #333; /* Dark gray for text */
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Elegant Blue Header */
+header {
+    background-color: #1a73e8; /* Modern blue banner */
+    padding: 15px 15px; /* Reduced padding for a shorter banner */
+    text-align: center;
+    position: fixed; /* Sticky header */
+    top: 0;
+    width: 100%;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    z-index: 100;
+}
+
+header h1 {
+    color: #ffffff; /* White for contrast */
+    font-size: 2em; /* Slightly smaller title */
+    margin: 0;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    letter-spacing: 1px;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0; /* Space between the header title and nav links */
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Balanced spacing between links */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #1100ff; /* Dark brown for buttons */
+    padding: 12px 25px; /* Comfortable button size */
+    border-radius: 8px; /* Softer corners */
+    transition: background-color 0.3s ease, transform 0.2s; /* Smooth animations */
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.8px;
+}
+
+nav a:hover {
+    background-color: #8905f5; /* Lighter brown on hover */
+    transform: scale(1.1); /* Gentle zoom effect */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Hover shadow */
+}
+
+/* Body Padding Fix for Sticky Header */
+body {
+    padding-top: 120px; /* Prevents content overlap with fixed header */
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack items on smaller screens */
+        gap: 15px;
+    }
+
+    nav a {
+        width: 100%; /* Full-width buttons on small screens */
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+}
+
+
+/* Sticky Header Spacing Fix */
+body {
+    padding-top: 100px; /* Adjusted padding for better layout alignment */
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* Clean and modern font */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column; /* Stack content on smaller screens */
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px; /* Smaller gaps for compact layout */
+    }
+
+    header h1 {
+        font-size: 2rem;
+        margin-bottom: 10px; /* Add space between title and nav */
+    }
+}
+
+
+/* Buttons */
+button, .btn {
+    background-color: #1a73e8;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover, .btn:hover {
+    background-color: #005cbf;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    background-color: #e8f0fe;
+    padding: 80px 20px;
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.cta-button {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Cards Section */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    color: #1a73e8;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+input:focus, textarea:focus {
+    border-color: #1a73e8;
+    outline: none;
+}
+
+/* Footer */
+footer {
+    background-color: #1a73e8;
+    color: #fff;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
