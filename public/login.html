@@ -27,7 +27,7 @@
                 $http.post('http://localhost:5000/login', $scope.user)
                 .then(function(response) {
                     alert('Login successful!');
-                    $window.location.href = 'index.html'; // Redirect after login
+                    $window.location.href = '../index.html'; // Redirect after login
                 })
                 .catch(function(error) {
                     alert('Invalid username or password');
