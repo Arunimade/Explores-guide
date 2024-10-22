@@ -1,4 +1,4 @@
-const express = require('express'); 
+const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -61,18 +61,6 @@ const tripPlanningSchema = new mongoose.Schema({
 });
 const TripPlanning = mongoose.model('TripPlanning', tripPlanningSchema);
 
-// Authentication middleware
-const authenticateToken = (req, res, next) => {
-    const token = req.headers['authorization']?.split(' ')[1]; // Get token from Authorization header
-    if (!token) return res.sendStatus(401); // No token, unauthorized
-
-    jwt.verify(token, 'your_jwt_secret', (err, user) => {
-        if (err) return res.sendStatus(403); // Invalid token, forbidden
-        req.user = user; // Save user info to request
-        next(); // Proceed to the next middleware/route handler
-    });
-};
-
 // Registration route
 app.post('/register', async (req, res) => {
     const { fullName, email, username, password } = req.body;
@@ -125,6 +113,7 @@ app.get('/blogs', async (req, res) => {
   }
 });
 
+
 // Add a new trip
 app.post('/add-trip', async (req, res) => {
   try {
@@ -147,7 +136,7 @@ app.get('/trips', async (req, res) => {
 });
 
 // Update a trip
-app.put('/update-trip/:id', authenticateToken, async (req, res) => {
+app.put('/update-trip/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const updatedTrip = await TripPlanning.findByIdAndUpdate(id, req.body, { new: true });
@@ -158,7 +147,7 @@ app.put('/update-trip/:id', authenticateToken, async (req, res) => {
 });
 
 // Delete a trip
-app.delete('/delete-trip/:id', authenticateToken, async (req, res) => {
+app.delete('/delete-trip/:id', async (req, res) => {
   try {
     const { id } = req.params;
     await TripPlanning.findByIdAndDelete(id);
@@ -166,12 +155,6 @@ app.delete('/delete-trip/:id', authenticateToken, async (req, res) => {
   } catch (error) {
     res.status(500).send('Error deleting trip');
   }
-});
-
-// Protected route to access files (for example)
-app.get('/files', authenticateToken, (req, res) => {
-    // Logic to send files to the user
-    res.send('This is a protected file route, accessible only to logged-in users.');
 });
 
 // Start the server

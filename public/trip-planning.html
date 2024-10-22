@@ -130,10 +130,9 @@
             <div id="trip-list">
                 <h3>📅 Planned Trips</h3>
                 <ul>
-                    <li ng-repeat="trip in trips" ng-click="viewTripDetails(trip._id)" style="cursor: pointer;">
-                        <strong>{{ trip.tripName }}</strong> - {{ trip.destination }}
-                        ({{ trip.startDate | date: 'shortDate' }} to {{ trip.endDate | date: 'shortDate' }})
-                        <button ng-click="deleteTrip($index); $event.stopPropagation();">🗑️ Delete</button>
+                    <li ng-repeat="trip in trips">
+                        <strong>{{trip.tripName}}</strong> - {{trip.destination}} ({{trip.startDate | date:'shortDate'}} to {{trip.endDate | date:'shortDate'}})
+                        <button ng-click="deleteTrip($index)">🗑️ Delete</button>
                     </li>
                 </ul>
             </div>

@@ -20,8 +20,7 @@ blogForm.addEventListener('submit', async (e) => {
       fetchBlogs(); // Refresh the blog list
       blogForm.reset();
     } else {
-      const errorMessage = await response.text();
-      alert(`Error posting blog: ${errorMessage}`);
+      alert('Error posting blog');
     }
   } catch (error) {
     console.error('Error:', error);
@@ -32,23 +31,12 @@ blogForm.addEventListener('submit', async (e) => {
 async function fetchBlogs() {
   try {
     const response = await fetch('http://localhost:5000/blogs');
-    if (!response.ok) {
-      throw new Error('Failed to fetch blogs');
-    }
-
     const blogs = await response.json();
-    blogsList.innerHTML = ''; // Clear the list before populating
-
+    
+    blogsList.innerHTML = '';
     blogs.forEach(blog => {
       const li = document.createElement('li');
-
-      // Create a clickable link for each blog title
-      const link = document.createElement('a');
-      link.textContent = `${blog.title} - ${new Date(blog.date).toLocaleString()}`;
-      link.href = `http://localhost:5000/blog/${blog.id}`; // Ensure the backend returns correct blog IDs
-      link.target = '_blank'; // Open in a new tab
-
-      li.appendChild(link);
+      li.textContent = `${blog.title} - ${new Date(blog.date).toLocaleString()}`;
       blogsList.appendChild(li);
     });
   } catch (error) {
