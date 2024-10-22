@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+
+// Initialize Express app
 const app = express();
 const PORT = process.env.PORT || 5000;
 
