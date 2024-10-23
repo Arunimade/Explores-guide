@@ -155,6 +155,14 @@ app.delete('/delete-trip/:id', async (req, res) => {
     res.status(500).send('Error deleting trip');
   }
 });
+app.get('/trips/planned', async (req, res) => {
+  try {
+    const plannedTrips = await TripPlanning.find({}); // Add a condition if needed
+    res.json(plannedTrips);
+  } catch (error) {
+    res.status(500).send('Error fetching planned trips');
+  }
+});
 
 // Start the server
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
