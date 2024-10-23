@@ -96,11 +96,10 @@ document.getElementById('download-pdf').addEventListener('click', function () {
     doc.setFontSize(14);
     doc.text('Summary:', 10, 35);
     doc.setFontSize(12);
-    doc.text(`- Personal Total: ₹${document.getElementById('personal-total').textContent}`, 10, 45);
     doc.text(`- Shared Total: ₹${document.getElementById('shared-total').textContent}`, 10, 55);
 
     doc.setFontSize(14);
-    doc.text('Category Details:', 10, 70);
+    doc.text('Personal expense catagory wise :', 10, 70);
     doc.setFontSize(12);
 
     let currentY = 80;
