@@ -73,15 +73,25 @@
                         <option value="Activities">🏞️ Activities</option>
                         <option value="Shopping">🛍️ Shopping</option>
                     </select>
-                    <input type="number" id="shared-entry-amount" placeholder="💸 Total Amount (Rs)" required>
-                    <input type="text" id="shared-entry-participants" placeholder="👥 Participants (comma-separated)" required>
+                    <input type="number" id="shared-entry-amount" placeholder="💸 Total Amount spent by you on you (Rs)" required>
+                    <!-- New input for number of friends -->
+                    <input type="number" id="shared-friend-count" placeholder="👥 Number of Friends" min="1" required>
+                    
+                    <!-- Container for dynamic table -->
+                    <div id="friend-expenses-table-container"></div>
+                    
                     <label for="shared-entry-bill">Upload Bill (Optional):</label>
                     <input type="file" id="shared-entry-bill" accept="image/*">
                     <button type="submit">➕ Add Entry</button>
                 </form>
+                
                 <ul id="shared-expense-list"></ul>
                 <p><strong>Total Shared Expenses:</strong> ₹<span id="shared-total">0.00</span></p>
+                <ul id="friend-breakdown"></ul>
+
             </div>
+            
+            
         </section>
 
         <section>
